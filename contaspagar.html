@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germina - Contas a Pagar</title>
+    <!-- Fonte Google Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="financeiro.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div class="main-wrapper" id="mainWrapper">
+            
+            <!-- Conteúdo da Página principal-->
+            <main class="content">
+
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Contas a Pagar</h1>
+                        <p class="page-subtitle">Acompanhe os principais indicadores em tempo real.</p>
+                    </div>
+                    <button class="btn-primary">
+                         <a href="lancamentoreceber.html">
+                        + Novo Lançamento
+                        </a>                        
+                    </button>
+                </div>
+
+                <!-- Tabela Recente -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Contas a Pagar - Calendário Financeiro</h3>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Fornecedor</th>
+                                <th>Tipo Despesa</th>
+                                <th>Data Vencimento</th>
+                                <th align="right">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DFG Sementes Ltda</td>
+                                <td>Compra de Insumos</td>
+                                <td>01/11/2026</td>
+                                <td align="right">R$ 1.200,00</td>
+                            </tr>
+                            <tr>
+                                <td>ABC Fertilizantes Ltda</td>
+                                <td>Compra de Insumos</td>
+                                <td>01/11/2026</td>
+                                <td align="right">R$ 450,00</td>
+                            </tr>
+                            <tr>
+                                <td>DFG Sementes Ltda</td>
+                                <td>Compra de Insumos</td>
+                                <td>02/11/2026</td>
+                                <td align="right">R$ 200,00</td>
+                            </tr>
+                            <tr>
+                                <td>HIJ Ferramentas Ltda</td>
+                                <td>Compra de Materiais de Manutenção</td>
+                                <td>03/11/2026</td>
+                                <td align="right">R$ 1.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>CASA DO FAZENDEIRO Ltda</td>
+                                <td>Compra de Materiais de Manutenção</td>
+                                <td>04/11/2026</td>
+                                <td align="right">R$ 1.450,00</td>
+                            </tr>
+                            <tr>
+                                <td>LMN Sementes Ltda</td>
+                                <td>Compra de Insumos</td>
+                                <td>05/11/2026</td>
+                                <td align="right">R$ 500,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr class="total-row">
+                                <td>Total Geral</td>
+                                <td></td>
+                                <td></td>
+                                <td align="right">R$ 4.800,00</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- JS Externo -->
+    <script src="financeiro.js"></script>
+</body>
+</html>

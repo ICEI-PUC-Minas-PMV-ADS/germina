@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germina - Finaceiro</title>
+    <!-- Fonte Google Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS do Financeiro Externo -->
+    <link rel="stylesheet" href="financeiro.css">
+</head>
+<body>
+
+
+    <div class="app-container">
+        
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div class="main-wrapper" id="mainWrapper">
+       
+            <!-- Conteúdo da Página principal-->
+            <main class="content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Painel de Controle</h1>
+                        <p class="page-subtitle">Acompanhe os principais indicadores em tempo real.</p>
+                    </div>
+                </div>
+
+                <!-- Cards Métricos -->
+                <div class="metrics-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Faturamento Mensal</span>
+                            <div class="card-icon"><i data-lucide="dollar-sign"></i></div>
+                        </div>
+                        <div class="card-value">R$ 38.450</div>
+                        <div class="card-trend trend-up">
+                            <i data-lucide="arrow-up-right"></i> +14% neste mês
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Novos Clientes</span>
+                            <div class="card-icon"><i data-lucide="user-plus"></i></div>
+                        </div>
+                        <div class="card-value">+ 6</div>
+                        <div class="card-trend trend-up">
+                            <i data-lucide="arrow-up-right"></i> +8% esta semana
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Total a Pagar</span>
+                            <div class="card-icon"><i data-lucide="banknote-arrow-down"></i></div>
+                        </div>
+                        <div class="card-value">R$ 4.800,00</div>
+                        <div class="card-trend trend-up">
+                            <i data-lucide="arrow-up-right"></i> +5% esta semana
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Total a Receber</span>
+                            <div class="card-icon"><i data-lucide="banknote-arrow-up"></i></div>
+                        </div>
+                        <div class="card-value">R$ 4.800,00</div>
+                        <div class="card-trend trend-up">
+                            <i data-lucide="arrow-up-right"></i> +5% esta semana
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </main>
+        </div>
+    </div>
+
+    <!-- JS Externo -->
+    <script src="financeiro.js"></script>
+</body>
+</html>

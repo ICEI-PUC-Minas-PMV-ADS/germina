@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germina - Finaceiro</title>
+    <!-- Fonte Google Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons (icones usados na aplicação)-->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS Externo (usar o css padronizado, esse css foi criado para as paginas do financeiro)-->
+    <link rel="stylesheet" href="financeiro.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div class="main-wrapper" id="mainWrapper">
+            
+            <!-- Header Superior -->
+             <!-- botoes superiores: recolher/expandir menu, localizar, notificações e alterar tema da página -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="btn-icon" id="toggleSidebarBtn" title="Alternar Menu">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    
+                    <div class="search-box">
+                        <i data-lucide="search"></i>
+                        <input type="text" class="search-input" placeholder="Buscar...">
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <button class="btn-icon" id="themeToggleBtn" title="Alternar Tema">
+                        <i data-lucide="moon" id="themeIcon"></i>
+                    </button>
+
+                    <button class="btn-icon" title="Notificações">
+                        <i data-lucide="bell"></i>
+                    </button>
+                </div>
+            </header>
+     
+            <!-- Conteúdo da Página principal-->
+            <!-- CONTEÚDO PRINCIPAL  aqui vai aparecer a pagina com a tag contentFrame no menu lateral -->
+            <main class="content" style="padding: 0; overflow: hidden; height: 100%">                
+              <iframe 
+                src="dashboard.html" 
+                name="contentFrame" 
+                id="contentFrame" 
+                style="width: 100%; height: 100%; border: none;">
+              </iframe>
+            </main>        
+        </div>      
+    </div>
+    <!-- JS Externo usando o js do financeiro, criar um js padrao para todos -->
+    <script src="financeiro.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germina - Finaceiro</title>
+    <!-- Fonte Google Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons (icones usados na aplicação)-->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS Externo (usar o css padronizado, esse css foi criado para as paginas do financeiro)-->
+    <link rel="stylesheet" href="financeiro.css">
+</head>
+<body>
+
+    <!-- Overlay Mobile (recolhe ou expande o sidebar)-->
+    <div class="overlay" id="overlay" onclick="closeMobileSidebar()"></div>
+
+    <div class="app-container">
+        
+        <!-- MENU LATERAL / SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div>
+                <!-- Topo Sidebar -->
+                <div class="sidebar-header">
+                    <a href="index.html" class="leaf">
+                        <div class="leaf-icon">
+                            <i data-lucide="leaf"></i>
+                        </div>
+                        <span class="hide-on-collapse">GERMINA</span>
+                    </a>
+                </div>
+
+                <!-- Lista de Navegação -->
+                <nav class="sidebar-menu">
+                    <div class="menu-category-title">Geral</div>
+                                      
+                    <!-- Link para o dashboard financeiro -->
+                    <a href="dashboard-new.html" target="contentFrame" class="nav-item">
+                    <i data-lucide="banknote-arrow-down"></i>
+                    <span class="hide-on-collapse">Dashboard</span>
+                    <span class="badge hide-on-collapse"></span>
+                    </a>
+
+                    <!-- Link para Contas a Pagar -->
+                    <a href="contaspagar.html" target="contentFrame" class="nav-item">
+                    <i data-lucide="banknote-arrow-down"></i>
+                    <span class="hide-on-collapse">Contas a Pagar</span>
+                    <span class="badge hide-on-collapse">6</span>
+                    </a>
+
+                    <!-- Link para Contas a receber -->
+                    <a href="contasreceber.html" target="contentFrame" class="nav-item">
+                    <i data-lucide="banknote-arrow-down"></i>
+                    <span class="hide-on-collapse">Contas a Receber</span>
+                    <span class="badge hide-on-collapse">6</span>
+                    </a>
+
+                    <!-- Link para as paginas do lucas -->
+                    <a href="lucas.html" target="contentFrame" class="nav-item">
+                    <i data-lucide="banknote-arrow-down"></i>
+                    <span class="hide-on-collapse">Lucas</span>
+                    <span class="badge hide-on-collapse"></span>
+                    </a>
+
+                    <!-- Link para as paginas do davi -->
+                    <a href="davi.html" target="contentFrame" class="nav-item">
+                    <i data-lucide="banknote-arrow-down"></i>
+                    <span class="hide-on-collapse">Davi</span>
+                    <span class="badge hide-on-collapse"></span>
+                    </a>
+
+                    <!-- Link para as paginas do davison -->
+                    <a href="davison.html" target="contentFrame" class="nav-item">
+                    <i data-lucide="banknote-arrow-down"></i>
+                    <span class="hide-on-collapse">Davison</span>
+                    <span class="badge hide-on-collapse"></span>
+                    </a>
+
+                    <!-- Link para as paginas do luiz -->
+                    <a href="luiz.html" target="contentFrame" class="nav-item">
+                    <i data-lucide="banknote-arrow-down"></i>
+                    <span class="hide-on-collapse">Luiz</span>
+                    <span class="badge hide-on-collapse"></span>
+                    </a>
+                   
+                </nav>
+            </div>
+
+            <!-- Rodapé da Sidebar -->
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <i data-lucide="user-round-arrow-left"></i>
+                    <div class="user-info hide-on-collapse">
+                        <span class="user-name">Warley Marcelo Pereira</span>
+                        <span class="user-role">Administrador</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- fim do menu lateral / sidebar -->
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div class="main-wrapper" id="mainWrapper">
+            
+            <!-- Header Superior -->
+             <!-- botoes superiores: recolher/expandir menu, localizar, notificações e alterar tema da página -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="btn-icon" id="toggleSidebarBtn" title="Alternar Menu">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    
+                    <div class="search-box">
+                        <i data-lucide="search"></i>
+                        <input type="text" class="search-input" placeholder="Buscar...">
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <button class="btn-icon" id="themeToggleBtn" title="Alternar Tema">
+                        <i data-lucide="moon" id="themeIcon"></i>
+                    </button>
+
+                    <button class="btn-icon" title="Notificações">
+                        <i data-lucide="bell"></i>
+                    </button>
+                </div>
+            </header>
+     
+            <!-- Conteúdo da Página principal-->
+             <!-- CONTEÚDO PRINCIPAL  aqui vai aparecer a pagina com a tag contentFrame no menu lateral -->
+            <!-- <main class="content" style="padding: 0; overflow: hidden; height: calc(100vh - 70px);"> -->
+            <main class="content" style="padding: 0; overflow: hidden; height: 100%">                
+              <iframe 
+                src="dashboard-new.html" 
+                name="contentFrame" 
+                id="contentFrame" 
+                style="width: 100%; height: 100%; border: none;">
+              </iframe>
+            </main>        
+        </div>      
+    </div>
+    <!-- JS Externo usando o js do financeiro, criar um js padrao para todos -->
+    <script src="financeiro.js"></script>
+</body>
+</html>
