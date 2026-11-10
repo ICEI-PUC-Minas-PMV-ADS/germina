@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* workflow */
+
+:root {
+    --verde-escuro: #21593b;
+    --verde-claro: #91b619;
+    --creme: #f7ecdf;
+    --cinza-escuro: #4b504c;
+    --azul-claro: #8eafde;
+    --laranja-escuro: #cd5b24;
+    --aside: #f2f2f2;
+    --vermelho: #e74c3c;
+
+    --sidebar-width: clamp(200px, 17vw, 280px);
+    --header-height: 62px;
+
+    --borda-sutil: 1px solid rgba(0, 0, 0, 0.08);
+    --touch-min: 44px;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--aside);
+}
+
+/* Header topbar fixa */
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    z-index: 40;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 1.5rem;
+
+    background-color: #F5F5F5;
+    border-bottom: var(--borda-sutil);
+}
+
+.app-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--verde-escuro);
+    font-weight: 700;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+}
+
+.app-header__brand img {
+    max-height: 44px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Botões topbar */
+
+.app-header__opcoes {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+   
+}
+
+.opcao-btn {
+
+    flex: 0 0 auto;
+    min-width: 200px;
+    height: 30px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    background-color: var(--verde-escuro);
+    color: white;
+    border-radius: 20px;
+    padding: 0 1.4rem;
+    border: none;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.15s ease,
+                box-shadow 0.25s ease;
+    
+}
+
+    .opcao-btn:hover {
+    background-color: white;
+    color: black;
+    
+    
+    }
+
+.opcao-btn[data-ativo="true"] {
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 12px rgba(33, 89, 59, 0.4);
+}
+
+
+/*  Botão hamburguer */
+.app-header__btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: black;
+    cursor: pointer;
+    width: var(--touch-min);
+    height: var(--touch-min);
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+/*  Sidebar */
+
+.app-aside {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    z-index: 30;
+
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    background-color: #F5F5F5;
+    border-right: var(--borda-sutil);
+    padding-top: 1.5rem;
+}
+
+.app-aside__nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-aside__link {
+    display: flex;
+    align-items: center;
+    min-height: 3rem;
+    padding: 0.5rem 1.5rem;
+    color: var(--verde-escuro);
+    font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-aside__link:hover,
+.app-aside__link[aria-current="page"] {
+    background-color: var(--verde-escuro);
+    color: var(--aside);
+}
+
+.app-aside__user {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    color: var(--verde-escuro);
+    border-top: var(--borda-sutil);
+}
+
+.app-aside__user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.app-aside__user-name {
+    font-weight: bold;
+    font-size: 1rem;
+    color: black;
+}
+
+.app-aside__user-config {
+    background: transparent;
+    border: none;
+    color: var(--cinza-escuro);
+    cursor: pointer;
+}
+
+.app-aside__logout {
+    background-color: var(--vermelho);
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+    transition: 0.2s ease;
+    min-height: var(--touch-min);
+}
+
+/*  Main */
+
+.app-main {
+    margin-left: var(--sidebar-width);
+    margin-top: var(--header-height);
+
+ 
+    height: calc(100vh - var(--header-height));
+    padding: 1.5rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;  
+}
+
+/*  Calendário */
+
+.calendario {
+    background-color: #fff;
+    border: var(--borda-sutil);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.calendario__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.calendario__titulo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    letter-spacing: 1px;
+}
+
+.calendario__nav {
+    background: transparent;
+    border: 1px solid var(--borda-sutil);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+    color: var(--verde-escuro);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.calendario__nav:hover {
+    background-color: var(--verde-escuro);
+    color: white;
+}
+
+.calendario__semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin-bottom: 0.5rem;
+    flex-shrink: 0;
+}
+
+.calendario__semana span {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--cinza-escuro);
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+}
+
+.calendario__grade {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 1fr;            
+    gap: 6px;
+    flex: 1;                        
+    min-height: 0;                  
+}
+
+
+.calendario__dia {
+    background-color: #fafafa;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cinza-escuro);
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    overflow: hidden;
+    padding: 4px;
+
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+    .calendario__dia:hover {
+        background-color: var(--verde-claro);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+.calendario__dia--fora {
+    color: #bbb;
+    background-color: transparent;
+    cursor: default;
+}
+
+.calendario__dia--hoje {
+    background-color: var(--verde-escuro);
+    color: white;
+    font-weight: 700;
+}
+
+.calendario__emoji {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+
+.calendario--lua   .calendario__dia:not(.calendario__dia--fora) { background-color: #eef3f9; }
+.calendario--clima .calendario__dia:not(.calendario__dia--fora) { background-color: #fff8e1; }
+.calendario--lua   .calendario__dia--hoje,
+.calendario--clima .calendario__dia--hoje { background-color: var(--verde-escuro); }
+
+
+/*  Overlay */
+
+.app-overlay {
+    display: none;
+    position: fixed;
+    inset: var(--header-height) 0 0 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 35;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.app-overlay.open {
+    display: block;
+    opacity: 1;
+}
+
+
+
+/* Responsividade  */
+
+
+
+@media (max-width: 900px) {
+
+    .app-header {
+        padding: 0 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .app-header__brand span {
+        display: none;              
+    }
+
+    .app-header__opcoes {
+        gap: 0.5rem;
+        
+    }
+
+    
+    .opcao-btn {
+        min-width: 44px;            
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border-radius: 50%;
+        font-size: 1.1rem;
+        gap: 0;
+    }
+
+    .opcao-btn__texto {
+        display: none;              
+    }
+
+
+    .app-header__btn {
+        display: flex;
+        margin-left: 0;
+    }
+
+    
+    .app-aside {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+        width: 280px;
+        overflow-y: auto;
+    }
+
+    .app-aside.open {
+        transform: translateX(0);
+    }
+
+    .app-main {
+        margin-left: 0;
+        height: auto;               
+        min-height: calc(100vh - var(--header-height));
+        padding: 1.5rem 1rem;
+        justify-content: flex-start;
+        overflow: visible;         
+    }
+
+    .calendario {
+        padding: 1rem;
+        max-width: 100%;
+        flex: none; 
+    }
+
+    .calendario__grade {
+        grid-auto-rows: auto;       
+    }
+
+    .calendario__dia {
+        min-height: 52px;
+        font-size: 0.85rem;
+    }
+
+    .calendario__emoji {
+        font-size: 0.8rem;
+    }
+}
+
+/*  Responsividade 2 */
+@media (max-width: 480px) {
+    .app-header__brand img { max-height: 36px; }
+
+    .opcao-btn {
+        width: 40px;
+        height: 40px;
+        min-height: 40px;
+        font-size: 1rem;
+    }
+
+    .app-header__btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .calendario__dia {
+        min-height: 44px;
+        font-size: 0.75rem;
+        padding: 2px;
+    }
+
+    .calendario__emoji {
+        font-size: 0.7rem;
+    }
+
+    .calendario__titulo {
+        font-size: 1.1rem;
+    }
+}

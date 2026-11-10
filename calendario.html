@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário</title>
+    <link rel="stylesheet" href="style-calendario.css">
+</head>
+
+<body>
+
+    <!--- Header(Topbar fixa) ---> 
+    <header class="app-header">
+
+        <!--- Botões (desktop e mobile-emoji-) --->
+
+        <div class="app-header__opcoes">
+            <button class="opcao-btn btn-lua" data-ativo="false" type="button"
+                    aria-label="Alternar calendário lunar">
+                🌙<span class="opcao-btn__texto"> Ciclo Lunar</span>
+            </button>
+
+            <button class="opcao-btn btn-clima" data-ativo="false" type="button"
+                    aria-label="Alternar previsão do tempo">
+                🌤️<span class="opcao-btn__texto"> Clima</span>
+            </button>
+                    <!--- Botão hambúrguer (mobile) --->
+        </div>
+
+        <button class="app-header__btn" id="app-header__btn" type="button"
+                aria-label="Abrir menu" aria-expanded="false" aria-controls="app-aside__menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+    </header>
+  
+    <!--- Main --->
+
+    <main class="app-main">
+        <div class="calendario" id="calendario">
+            <div class="calendario__header">
+                <button class="calendario__nav" id="mesAnterior" aria-label="Mês anterior">‹</button>
+                <h2 class="calendario__titulo" id="tituloMes">Outubro 2026</h2>
+                <button class="calendario__nav" id="mesProximo" aria-label="Próximo mês">›</button>
+            </div>
+
+            <div class="calendario__semana">
+                <span>Dom</span><span>Seg</span><span>Ter</span>
+                <span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+            </div>
+
+            <div class="calendario__grade" id="gradeDias"></div>
+        </div>
+    </main>
+
+    <!-- Overlay (mobile) -->
+    <div class="app-overlay" id="app-overlay"></div>
+
+    <script src="calendario.js"></script>
+</body>
+
+</html>
