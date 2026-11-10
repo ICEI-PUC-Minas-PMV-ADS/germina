@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-plantio.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <button class="app-header__btn" id="app-header__btn" type="button" aria-label="Abrir menu"
+                aria-expanded="false" aria-controls="app-aside__menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </header>
+
+        <main class="app-main">
+
+            <!-- TELA 1: ESCOLHA -->
+            <section class="tela" id="tela-escolha">
+                <div class="registro-container">
+
+                    <div class="registro-titulo">
+                        <h1>REGISTRO DE PLANTIO</h1>
+                        <p class="texto-sublinhado">Como deseja prosseguir?</p>
+                    </div>
+
+                    <div class="registro-cards">
+
+                        <!-- Card 1: Registro Manual -->
+                        <div class="card-opcao">
+                            <div class="card-icone">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            </div>
+                            <h2>Registro manual</h2>
+                            <p>Preencha as informações do plantio manualmente, como cultura, área, data e outros detalhes.</p>
+                            <button type="button" class="btn-continuar" data-destino="tela-manual">continuar &rarr;</button>
+                        </div>
+
+                        <!-- Card 2: Scanner / Upload -->
+                        <div class="card-opcao">
+                            <div class="card-icone">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h3"></path><path d="M20 7V4h-3"></path><path d="M4 17v3h3"></path><path d="M20 17v3h-3"></path><line x1="4" y1="12" x2="20" y2="12"></line></svg>
+                            </div>
+                            <h2>Com scanner / upload</h2>
+                            <p>Faça o upload de um documento ou escaneie o comprovante do plantio para preencher as informações automaticamente.</p>
+                            <button type="button" class="btn-continuar" data-destino="tela-scanner">continuar &rarr;</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- TELA 2: REGISTRO MANUAL -->
+            <section class="tela escondida" id="tela-manual">
+
+                <nav class="caminho">
+                    <button type="button" class="caminho__link" data-destino="tela-escolha">registro de plantio</button>
+                    <span>&gt;</span>
+                    <span class="caminho__atual">registro manual</span>
+                </nav>
+
+                <div class="painel">
+                    <div class="painel__borda">
+
+                        <div class="campo">
+                            <label for="lavoura">lavoura *</label>
+                            <select id="lavoura">
+                                <option value="" disabled selected>Selecione a lavoura</option>
+                                <option>Lavoura 1</option>
+                                <option>Lavoura 2</option>
+                                <option>Lavoura 3</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <div class="campo">
+         <label for="cultura">Cultura *</label>
+                <input type="text" id="cultura" list="lista-culturas" placeholder="Pesquise a cultura..." autocomplete="off">
+    <datalist id="lista-culturas">
+        <option value="Milho"></option>
+        <option value="Soja"></option>
+        <option value="Feijão"></option>
+        <option value="Arroz"></option>
+        <option value="Trigo"></option>
+        <option value="Café"></option>
+        <option value="Cana-de-açúcar"></option>
+        <option value="Algodão"></option>
+        <option value="Mandioca"></option>
+        <option value="Sorgo"></option>
+        <option value="Tomate"></option>
+        <option value="Batata"></option>
+        <option value="Cebola"></option>
+    </datalist>
+</div>
+                            
+                        </div>
+
+                        <div class="linha">
+                            <div class="campo">
+                                <label for="data-plantio">Data do plantio *</label>
+                                <input type="date" id="data-plantio">
+                            </div>
+                            <div class="campo">
+                                <label for="area">Área plantada *</label>
+                                <input type="number" id="area" placeholder="Ex: 12,5" step="0.1">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="obs">Observações <small>(opcional)</small></label>
+                            <textarea id="obs" rows="3" placeholder="Digite alguma observação..."></textarea>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="acoes">
+                    <button type="button" class="btn-escuro">Salvar registro</button>
+                    <button type="button" class="btn-escuro" data-destino="tela-escolha">&larr; Voltar</button>
+                </div>
+            </section>
+
+            <!-- TELA 3: SCANNER / UPLOAD -->
+            <section class="tela escondida" id="tela-scanner">
+
+                <nav class="caminho">
+                    <button type="button" class="caminho__link" data-destino="tela-escolha">registro plantio</button>
+                    <span>&gt;</span>
+                    <span class="caminho__atual">com scanner / upload</span>
+                </nav>
+
+                <div class="painel">
+                    <div class="painel__borda">
+
+                        <h2>Com scanner / upload</h2>
+                        <p class="subtitulo">Envie um documento ou tire uma foto do comprovante de plantio</p>
+
+                        <div class="dropzone" id="dropzone">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 7V4h3"></path><path d="M20 7V4h-3"></path>
+                                <path d="M4 17v3h3"></path><path d="M20 17v3h-3"></path>
+                                <line x1="4" y1="12" x2="20" y2="12"></line>
+                            </svg>
+
+                            <strong>Arraste o arquivo aqui</strong>
+                            <span class="ou">ou</span>
+
+                            <input type="file" id="arquivo" accept=".jpg,.jpeg,.png,.pdf" hidden>
+                            <button type="button" class="btn-escuro" id="btn-arquivo">selecionar arquivo</button>
+
+                            <p class="formatos">formatos aceitos: JPG, PNG, PDF<br>Tamanho máx: 10 MB</p>
+                            <p class="nome-arquivo" id="nome-arquivo"></p>
+                        </div>
+
+                        <div class="rodape-scanner">
+                            <div class="aviso">
+                                <strong>Após o envio</strong>
+                                <span>O sistema vai ler as informações do documento e você poderá verificar e confirmar os dados.</span>
+                            </div>
+                            <button type="button" class="btn-escuro" data-destino="tela-escolha">&larr; Voltar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script-plantio.js"></script>
+</body>
+
+</html>
+        
