@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#21593B">
+    <title>Germina | Safras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-safra.css">
+</head>
+<script src="https://unpkg.com/lucide@latest"></script>
+<body>
+    <div class="app-container">
+
+        <div class="overlay" id="sidebar-overlay"></div>
+
+        <div class="main-wrapper">
+            <header class="header">
+                <div class="header-left">
+                    <button class="btn-icon mobile-menu-button" id="mobile-menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="app-aside__menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                    <div class="breadcrumb"><span>Menu inicial</span><span aria-hidden="true">/</span><strong>Safras</strong></div>
+                </div>
+                <div class="header-right">
+                </div>
+            </header>
+
+            <main class="content">
+                <section class="page-header">
+                    <div>
+                        <h1 class="page-title">Safras</h1>
+                        <p class="page-subtitle">Acompanhe os indicadores e os resultados de cada safra.</p>
+                    </div>
+                    <button class="btn-primary" type="button" id="new-harvest-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        Nova safra
+                    </button>
+                </section>
+
+                <section class="harvest-section" aria-label="Resumo das safras">
+                    <div class="section-heading">
+                        <div>
+                            <h2 class="section-title">Suas safras</h2>
+                            <p class="section-description">Deslize para consultar os indicadores de cada uma.</p>
+                        </div>
+                        <div class="carousel-controls">
+                            <button type="button" class="btn-icon carousel__btn--prev" id="carousel-prev" aria-label="Safra anterior">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+                            </button>
+                            <button type="button" class="btn-icon carousel__btn--next" id="carousel-next" aria-label="Próxima safra">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-viewport" id="carousel-track">
+                        <div class="harvest-cards">
+                            <article class="card harvest-card">
+                                <div class="harvest-card-top"><span class="harvest-icon">🍅</span><span class="status-badge status-success">Em andamento</span></div>
+                                <p class="harvest-label">Safra 01</p><h3 class="harvest-name">Tomate-cereja</h3><p class="harvest-period">Plantio iniciado em 12/08/2026</p>
+                                <div class="harvest-metrics"><div><span>Consumo</span><strong>R$ 2,00</strong></div><div><span>Gastos</span><strong>R$ 1,00</strong></div><div><span>Ganho</span><strong class="positive-value">R$ 50,00</strong></div><div><span>Colheitas</span><strong>30</strong></div></div>
+                                <a href="safras.html" class="card-link">Ver detalhes <span aria-hidden="true">→</span></a>
+                            </article>
+                            <article class="card harvest-card">
+                                <div class="harvest-card-top"><span class="harvest-icon">🥬</span><span class="status-badge status-success">Em andamento</span></div>
+                                <p class="harvest-label">Safra 02</p><h3 class="harvest-name">Alface crespa</h3><p class="harvest-period">Plantio iniciado em 20/08/2026</p>
+                                <div class="harvest-metrics"><div><span>Consumo</span><strong>R$ 12,00</strong></div><div><span>Gastos</span><strong>R$ 24,00</strong></div><div><span>Ganho</span><strong class="positive-value">R$ 86,00</strong></div><div><span>Colheitas</span><strong>12</strong></div></div>
+                                <a href="safras.html" class="card-link">Ver detalhes <span aria-hidden="true">→</span></a>
+                            </article>
+                            <article class="card harvest-card">
+                                <div class="harvest-card-top"><span class="harvest-icon">🌿</span><span class="status-badge status-warning">Em planejamento</span></div>
+                                <p class="harvest-label">Safra 03</p><h3 class="harvest-name">Manjericão</h3><p class="harvest-period">Plantio previsto para 02/11/2026</p>
+                                <div class="harvest-metrics"><div><span>Consumo</span><strong>—</strong></div><div><span>Gastos</span><strong>R$ 0,00</strong></div><div><span>Ganho</span><strong>—</strong></div><div><span>Colheitas</span><strong>0</strong></div></div>
+                                <a href="safras.html" class="card-link">Ver detalhes <span aria-hidden="true">→</span></a>
+                            </article>
+                            <article class="card harvest-card">
+                                <div class="harvest-card-top"><span class="harvest-icon">🥕</span><span class="status-badge status-success">Concluída</span></div>
+                                <p class="harvest-label">Safra 04</p><h3 class="harvest-name">Cenoura</h3><p class="harvest-period">Colheita finalizada em 30/07/2026</p>
+                                <div class="harvest-metrics"><div><span>Consumo</span><strong>R$ 8,00</strong></div><div><span>Gastos</span><strong>R$ 18,00</strong></div><div><span>Ganho</span><strong class="positive-value">R$ 42,00</strong></div><div><span>Colheitas</span><strong>18</strong></div></div>
+                                <a href="safras.html" class="card-link">Ver detalhes <span aria-hidden="true">→</span></a>
+                            </article>
+                            <article class="card harvest-card">
+                                <div class="harvest-card-top"><span class="harvest-icon">🥒</span><span class="status-badge status-warning">Atenção</span></div>
+                                <p class="harvest-label">Safra 05</p><h3 class="harvest-name">Pepino</h3><p class="harvest-period">Plantio iniciado em 05/09/2026</p>
+                                <div class="harvest-metrics"><div><span>Consumo</span><strong>R$ 5,00</strong></div><div><span>Gastos</span><strong>R$ 14,00</strong></div><div><span>Ganho</span><strong class="positive-value">R$ 21,00</strong></div><div><span>Colheitas</span><strong>6</strong></div></div>
+                                <a href="safras.html" class="card-link">Ver detalhes <span aria-hidden="true">→</span></a>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="quick-actions" aria-label="Ações rápidas">
+                    <a href="dashboard.html" class="action-card dashboard-action">
+                        <span class="action-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span>
+                        <span><strong>Dashboard</strong><small>Visualize os resultados da produção</small></span><span class="action-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="registros.html" class="action-card">
+                        <span class="action-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span>
+                        <span><strong>Registro por foto</strong><small>Registre a produção com uma imagem</small></span><span class="action-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="registros.html" class="action-card">
+                        <span class="action-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+                        <span><strong>Registro manual</strong><small>Adicione informações da sua safra</small></span><span class="action-arrow" aria-hidden="true">→</span>
+                    </a>
+                </section>
+                <p class="demo-note">Dados ilustrativos para teste de integração visual.</p>
+            </main>
+        </div>
+    </div>
+    <script src="script-safra.js"></script>
+</body>
+</html>
