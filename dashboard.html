@@ -1,61 +1,122 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Germina - Finaceiro</title>
-    <!-- Fonte Google Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons (icones usados na aplicação)-->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- CSS Externo (usar o css padronizado, esse css foi criado para as paginas do financeiro)-->
-    <link rel="stylesheet" href="financeiro.css">
+    <title>Germina - Relatórios</title>
+    <link rel="stylesheet" href="style-dashboard.css">
 </head>
-<body>
 
+<body>
     <div class="app-container">
-        
-        <!-- CONTEÚDO PRINCIPAL -->
-        <div class="main-wrapper" id="mainWrapper">
-            
-            <!-- Header Superior -->
-             <!-- botoes superiores: recolher/expandir menu, localizar, notificações e alterar tema da página -->
-            <header class="header">
-                <div class="header-left">
-                    <button class="btn-icon" id="toggleSidebarBtn" title="Alternar Menu">
-                        <i data-lucide="menu"></i>
-                    </button>
+
+        <!-- Header(topbar) -->
+        <header class="app-header">
+            <button class="app-header__btn" id="app-header__btn" type="button" aria-label="Abrir menu"
+                aria-expanded="false" aria-controls="app-aside__menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </header>
+
+        <!-- Main -->
+        <main class="app-main">
+
+            <div class="app-aside__section-mobile">
+                <span class="app-aside__section-title">Relatórios</span>
+                <a href="#" class="app-aside__link" data-section-link="financeiro">Financeiro</a>
+                <a href="#" class="app-aside__link" data-section-link="producao">Produção</a>
+                <a href="#" class="app-aside__link" data-section-link="estoque">Estoque</a>
+                <hr class="app-aside__divider">
+            </div>
+
+            <div class="dashboard">
+
+                <div class="dashboard__left">
                     
-                    <div class="search-box">
-                        <i data-lucide="search"></i>
-                        <input type="text" class="search-input" placeholder="Buscar...">
+                    <ul class="app-header__list">
+                        <li>
+                            <button type="button" data-section="financeiro" aria-pressed="false">
+                                Financeiro
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" data-section="producao" aria-pressed="false">
+                                Produção
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" data-section="estoque" aria-pressed="false">
+                                Estoque
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="chart-group">
+                        <div class="filters">
+                            <button type="button" class="mini-card" id="mini-1">
+                                <span class="mini-card__label">—</span>
+                                <span class="mini-card__value">—</span>
+                            </button>
+                            <button type="button" class="mini-card" id="mini-2">
+                                <span class="mini-card__label">—</span>
+                                <span class="mini-card__value">—</span>
+                            </button>
+                        </div>
+                        <article class="chart-card">
+                            <header class="chart-card__head">
+                                <p id="chart-1-title">—</p>
+                            </header>
+                            <div class="chart-card__body">
+                                <canvas id="chart-1"></canvas>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="chart-group">
+                        <div class="filters">
+                            <button type="button" class="mini-card" id="mini-3">
+                                <span class="mini-card__label">—</span>
+                                <span class="mini-card__value">—</span>
+                            </button>
+                            <button type="button" class="mini-card" id="mini-4">
+                                <span class="mini-card__label">—</span>
+                                <span class="mini-card__value">—</span>
+                            </button>
+                        </div>
+                        <article class="chart-card">
+                            <header class="chart-card__head">
+                                <p id="chart-2-title">—</p>
+                            </header>
+                            <div class="chart-card__body">
+                                <canvas id="chart-2"></canvas>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
-                <div class="header-right">
-                    <button class="btn-icon" id="themeToggleBtn" title="Alternar Tema">
-                        <i data-lucide="moon" id="themeIcon"></i>
-                    </button>
-
-                    <button class="btn-icon" title="Notificações">
-                        <i data-lucide="bell"></i>
-                    </button>
+                <div class="dashboard__right">
+                    <aside class="super-card" id="super-card">
+                        <header class="super-card__head">
+                            <p id="super-card-title">-</p>
+                        </header>
+                        <div class="super-card__body">
+                            <p id="super-card-text"></p>
+                        </div>
+                    </aside>
+                    <button type="button" class="download" id="btn-download">Download ⬇</button>
                 </div>
-            </header>
-     
-            <!-- Conteúdo da Página principal-->
-            <!-- CONTEÚDO PRINCIPAL  aqui vai aparecer a pagina com a tag contentFrame no menu lateral -->
-            <main class="content" style="padding: 0; overflow: hidden; height: 100%">                
-              <iframe 
-                src="dashboard.html" 
-                name="contentFrame" 
-                id="contentFrame" 
-                style="width: 100%; height: 100%; border: none;">
-              </iframe>
-            </main>        
-        </div>      
+
+            </div>
+        </main>
     </div>
-    <!-- JS Externo usando o js do financeiro, criar um js padrao para todos -->
-    <script src="financeiro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
 </body>
+
 </html>
