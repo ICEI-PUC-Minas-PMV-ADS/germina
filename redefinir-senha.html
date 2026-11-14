@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redefinição de senha | Germina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="centro">
+    <section class="card card--redefinir">
+      <h1>Redefinição de senha</h1>
+      <p class="instrucao">Insira o e-mail cadastrado e te enviaremos uma nova senha</p>
+
+      <form id="form-redefinicao">
+        <input type="email" id="email" placeholder="E-mail" aria-label="E-mail cadastrado" autocomplete="email" required>
+        <p id="mensagem" class="mensagem mensagem--ok" role="status"></p>
+        <button type="submit" class="btn">Enviar</button>
+        <a href="login.html" class="btn btn--contorno">Voltar para o login</a>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
